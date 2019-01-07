@@ -1,4 +1,4 @@
-FROM golang
+FROM golang AS build
 
 RUN echo "nobody:x:65534:65534:Nobody:/:" > /etc_passwd
 WORKDIR /go/src/github.com/nrmitchi/k8s-controller-sidecars
