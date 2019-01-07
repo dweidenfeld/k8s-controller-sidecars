@@ -1,9 +1,9 @@
 FROM golang
 
 RUN echo "nobody:x:65534:65534:Nobody:/:" > /etc_passwd
-WORKDIR /src
+WORKDIR /go/src/github.com/nrmitchi/k8s-controller-sidecars
 
-COPY *.go /src/
+COPY *.go /go/src/github.com/nrmitchi/k8s-controller-sidecars/
 RUN go get -v
 
 RUN CGO_ENABLED=0 go build -o /bin/k8s-controller-sidecars .
